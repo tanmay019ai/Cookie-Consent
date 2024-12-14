@@ -8,18 +8,28 @@ body
 {
     background-color: #FF3366;
 }
-.cookies
-{
+.cookies {
     height: 250px;
     width: 250px;
     background-color: #20A4F3;
     border-radius: 15px;
     position: absolute;
-    bottom:0;
-    right: 0;
-    display: none;
-    transition: right 0.3s ease;
+    bottom: 0px; /* Start off-screen at the bottom */
+    right: 20px;
+    opacity: 0; /* Fully transparent */
+    transition: bottom 0.5s ease, opacity 0.5s ease; /* Smooth bottom and opacity changes */
 }
+
+.cookies.show {
+    bottom: 20px; /* Slide up into view */
+    opacity: 1; /* Fully visible */
+}
+
+.cookies.hide {
+    bottom: 0px; /* Slide down out of view */
+    opacity: 0; /* Fully transparent */
+}
+
 .cookies #img1
 {
     height: 60px;
